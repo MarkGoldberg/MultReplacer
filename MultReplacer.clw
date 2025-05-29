@@ -37,6 +37,8 @@
 ! /NoMessage - remove calls to MESSAGE
 !              failures will be HALT N, which can be detected by ERRORLEVEL in batch files
 ! /Overwrite - when not present should prompt when the SaveAs already exists
+! consider adding case sensitivity control to each search/replace line
+! consider some notation to support trailing spaces in search and/or replace
 
 
  PROGRAM
@@ -52,8 +54,8 @@
 
 ShowODS      BOOL(FALSE)
 
-FormalUsage  EQUATE('MultiReplacer  From=%SourceFile% Changes=%SearchReplacePairsControlFile% [SaveAs=%DestinationFile%]  [/Debug]')
-ExampleUsage EQUATE('c:\> MultiReplacer From="C:\Folder with spaces needs double quotes\Yada.txt"  Changes="C:\Some Folder\ControlFile.txt SaveAs=C:\tmp\ChangedYada.txt')
+FormalUsage  EQUATE('MultReplacer  From=%SourceFile% Changes=%SearchReplacePairsControlFile% [SaveAs=%DestinationFile%]  [/Debug]')
+ExampleUsage EQUATE('c:\> MultReplacer From="C:\Folder with spaces needs double quotes\Yada.txt"  Changes="C:\Some Folder\ControlFile.txt SaveAs=C:\tmp\ChangedYada.txt')
 Usage        EQUATE(FormalUsage & '||Example:|' & ExampleUsage )
 
 FromFilename    ANY          ! From    Filename 
@@ -65,35 +67,34 @@ ChangesFile StringTheory ! Split list Search ; Replace <13,10>
 
 !==========================================================================================
  CODE 
- Debug('MultiReplacer '& COMMAND() )
  ShowODS         = CHOOSE( UPPER(COMMAND('/Debug')) = 'DEBUG') ! controls if Debug messages are sent to OutputDebugString
  FromFilename    = COMMAND('From')
  ChangesFilename = COMMAND('Changes')
  SaveAsFilename  = COMMAND('SaveAs')
-    
+ 
  IF SaveAsFilename  = '' 
     SaveAsFilename  = FromFilename        
  END 
-        
-           ! ODS('ShowODS['& ShowODS &']')
+                     ! ODS('ShowODS['& ShowODS &']')
+                       Debug('MultiReplacer '& COMMAND() )
                        Debug('Infile    ['& FromFilename      &']')
                        Debug('Changes   ['& ChangesFilename &']')
                        Debug('SaveAsFile['& SaveAsFilename  &']')
 
  IF ~EXISTS( FromFilename )
-     MESSAGE('From['& FromFilename &']|Not found||Usage:|' & Usage  ,'MultiReplacer cannot continue')
+     MESSAGE('From['& FromFilename &']|Not found||Usage:|' & Usage  ,'MultReplacer cannot continue')
      HALT(1)
  END
     
  IF ~EXISTS( ChangesFilename )
-     MESSAGE('Changes['& ChangesFilename &']|Not found||Usage:|' & Usage,'MultiReplacer cannot continue')
+     MESSAGE('Changes['& ChangesFilename &']|Not found||Usage:|' & Usage,'MultReplacer cannot continue')
      HALT(2) 
  END 
 
     
 ! Check for folder ?
 ! IF ~EXISTS( SaveAsFile )
-!     MESSAGE('SaveAs['& SaveAsFile &']|Folder Not found||Usage:|' & Usage,'MultipleRepalce cannot continue')
+!     MESSAGE('SaveAs['& SaveAsFile &']|Folder Not found||Usage:|' & Usage,'MultReplacer cannot continue')
 !     HALT(3) 
 ! END 
 
@@ -121,7 +122,7 @@ ReplaceWith    ANY
 
  LOOP RowNum = 1 TO ChangesFile.Records()
    ! Expected Format: search_for ; Replace With <13,10>
-   ! lines in changes file starting with ! are considered commentst
+   ! lines in changes file starting with ! are considered comments
         
    CurrRow.SetValue ( CLIP(ChangesFile.GetLine( RowNum ) ) )
         
