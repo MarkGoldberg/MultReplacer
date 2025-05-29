@@ -137,8 +137,15 @@ ReplaceWith    ANY
         
    SearchFor   = CLIP( CurrRow.GetLine(1) )
    ReplaceWith = CLIP( CurrRow.GetLine(2) )     
-   
-   Count = FromFile.Replace( SearchFor, ReplaceWith )
+
+		
+   ! st:nocase           equate(1)
+   ! st:replaceAll       equate(1) !<--- I don't know what this is supposed to be for, but do NOT use it in the Count argument of replace
+   !StringTheory.Replace Procedure (string pOldValue, string pNewValue, long pCount=0, long pStart=1, long pEnd=0, long pNoCase=0, bool pRecursive), Long, Proc, virtual
+   !StringTheory.Replace Procedure (string pOldValue, string pNewValue, long pCount=0, long pStart=1, long pEnd=0, long pNoCase=0), Long, Proc, virtual
+
+		                                           !,count         , start, end, pNoCase   )
+   Count = FromFile.Replace( SearchFor, ReplaceWith,               ,      ,    , st:nocase )
                            Debug('SearchFor['& SearchFor & '] ReplaceWith['& ReplaceWith &'] Count['& Count &']')        
  END 
  
