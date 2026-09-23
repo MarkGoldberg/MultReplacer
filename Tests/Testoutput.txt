@@ -1,0 +1,36 @@
+"/C/Hg/TSI/CW/EstGit"                                  ; "/E/Dev/TSI/5/CW/EstGit"
+"/E/Dev/MG/CW/Shared/Src"                                  ; "/E/Dev/MG/CW/Shared/Src"
+"/C/Hg/TSI/CW/LaaS/GitHub/MRiffey"                     ; "/E/Dev/TSI/5/LaaS/GitHub/MRiffey/"
+"/C/SV/Capesoft"                                       ; "/E/Dev/Purchase/Capesoft"
+"/C/SV"                                                ; "/E/Dev/Purchase/SV"
+"/C/Users/Win8M/Documents/SourceTree/CwUnit"           ; "/E/Dev/GitHub/MarkGoldberg/CwUnit"
+"/C/Users/Win8M/OneDrive/Dev/GitHub/MikeDuglas"        ; "/E/Dev/GitHub/MikeDuglas"
+"/C/Hg/TSI/CW/Utils"                                   ; "/E/Dev/TSI/5/CW/Utils"
+"/C/Hg/CW/Shared/FreeImage"                            ; "/E/Dev/NonGitHub/FreeImage"
+"/C/Hg/TSI/CW"                                         ; "/E/Dev/TSI/5/CW"
+"/C/Hg/CW/Shared"                                      ; "/E/Dev/MG/CW/Shared"
+"/C/Hg/TSI/VS"                                         ; "/E/Dev/TSI/5/VS"
+"/C/Hg/TSI/Distrib"                                    ; "/E/Dev/TSI/5/Distrib"
+
+
+"C:\\Hg\\TSI\\CW\\EstGit"                              ; "E:\\Dev\\TSI\\5\\CW\\EstGit"
+"C:\\Hg\\CW\\Shared\\Src"                              ; "E:\\Dev\\MG\\CW\\Shared\\Src"
+"C:\\Hg\\TSI\\CW\\LaaS\\GitHub\\MRiffey"               ; "E:\\Dev\\TSI\\5\\LaaS\\GitHub\\MRiffey\\"
+"C:\\SV\\Capesoft"                                     ; "E:\\Dev\\Purchase\\Capesoft"
+"C:\\SV"                                               ; "E:\\Dev\\Purchase\\SV"
+"C:\\Users\\Win8M\\Documents\\SourceTree\\CwUnit"      ; "E:\\Dev\\GitHub\\MarkGoldberg\\CwUnit"
+"C:\\Users\\Win8M\\OneDrive\\Dev\\GitHub\\MikeDuglas"  ; "E:\\Dev\\GitHub\\MikeDuglas"
+"C:\\Hg\\TSI\\CW\\Utils"                               ; "E:\\Dev\\TSI\\5\\CW\\Utils"
+"C:\\Hg\\CW\\Shared\\FreeImage"                        ; "E:\\Dev\\NonGitHub\\FreeImage"
+"C:\\Hg\\TSI\\CW"                                      ; "E:\\Dev\\TSI\\5\\CW"
+"C:\\Hg\\CW\\Shared"                                   ; "E:\\Dev\\MG\\CW\\Shared"
+"C:\\Hg\\TSI\\VS"                                      ; "E:\\Dev\\TSI\\5\\VS"
+"C:\\Hg\\TSI\\Distrib"                                 ; "E:\\Dev\\TSI\\5\\Distrib"
+
+
+
+;;; Please write:
+;;; SearchReplace From="Yada.txt" Changes=Items.txt SaveAs="NewYada.txt"
+;;; plan on removing all "
+ 
+A from file
