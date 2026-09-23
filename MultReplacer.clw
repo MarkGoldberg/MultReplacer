@@ -28,7 +28,7 @@
 !  Created      : May 21st, 2025
 !  Last Updated : May 21st, 2025
 !
-!  C:\> MultiReplacer From=%SourceFile% Changes=%SearchReplacePairsControlFile% [SaveAs=%DestinationFile%] [/Debug]
+!  C:\> MultReplacer From=%SourceFile% Changes=%SearchReplacePairsControlFile% [SaveAs=%DestinationFile%] [/Debug]
 !
 ! ===============================================================================================
 !EndRegion Notices and Notes
@@ -76,7 +76,7 @@ ChangesFile StringTheory ! Split list Search ; Replace <13,10>
     SaveAsFilename  = FromFilename        
  END 
                      ! ODS('ShowODS['& ShowODS &']')
-                       Debug('MultiReplacer '& COMMAND() )
+                       Debug('MultReplacer '& COMMAND() )
                        Debug('Infile    ['& FromFilename      &']')
                        Debug('Changes   ['& ChangesFilename &']')
                        Debug('SaveAsFile['& SaveAsFilename  &']')
